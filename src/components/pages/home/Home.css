@@ -2,10 +2,20 @@
   padding: 5rem 9%;
 }
 
+.home > .iteams {
+  padding: 0 9%;
+  padding-bottom: 5rem;
+}
+
 /* media quearies */
 @media (max-width: 1024px) {
   .home > *:not(.banner) {
     padding: 5rem 5%;
+  }
+
+  .home > .iteams {
+    padding: 0 5%;
+    padding-bottom: 5rem;
   }
 }
 
@@ -13,9 +23,19 @@
   .home > *:not(.banner) {
     padding: 5rem 3rem;
   }
+
+  .home > .iteams {
+    padding: 0 3rem;
+    padding-bottom: 5rem;
+  }
 }
 @media (max-width: 450px) {
   .home > *:not(.banner) {
     padding: 5rem 2rem;
+  }
+
+  .home > .iteams {
+    padding: 0 2rem;
+    padding-bottom: 5rem;
   }
 }

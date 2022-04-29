@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Iteamcard from "../iteamCard/IteamCard";
+import Sectiontitle from "../sectionTitle/SectionTitle";
 import "./Iteams.css";
 const Iteams = () => {
   const [iteams, setIteams] = useState([]);
@@ -12,11 +13,14 @@ const Iteams = () => {
   }, []);
 
   return (
-    <div className="iteams">
-      {iteams.slice(0, 6).map((iteam) => (
-        <Iteamcard key={iteam._id} iteam={iteam} />
-      ))}
-    </div>
+    <>
+      <Sectiontitle>our iteams</Sectiontitle>
+      <div className="iteams">
+        {iteams.slice(0, 6).map((iteam) => (
+          <Iteamcard key={iteam._id} iteam={iteam} />
+        ))}
+      </div>
+    </>
   );
 };
 
