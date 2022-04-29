@@ -44,6 +44,44 @@
   background: var(--orange);
 }
 
-.banner .slide-3 .content {
-  margin-left: 50%;
+.banner .slide-3 .content,
+.banner .slide-1 .content {
+  margin-left: 56%;
+}
+
+.banner .slide-2 .content {
+  margin: 0 auto;
+}
+
+.banner .slide h1 {
+  font-size: 5.5rem;
+  line-height: 7rem;
+  color: var(--green);
+}
+
+.banner .slide-1 h1 {
+  color: var(--orange-light);
+}
+
+.banner .slide-2 h1 {
+  color: var(--red);
+}
+.banner .slide .content p {
+  font-weight: 500;
+  margin: 1rem 0;
+}
+
+.banner .slide-1 .btn {
+  background: var(--orange-light);
+}
+
+.banner .slide-1 .btn:hover {
+  background: var(--green);
+}
+
+/* media quearies */
+@media (max-width: 450px) {
+  .banner .slide .content {
+    margin-left: 20%;
+  }
 }
