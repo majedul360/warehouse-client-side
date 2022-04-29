@@ -1,0 +1,16 @@
+.header .nav {
+  margin-left: auto;
+}
+
+.header .nav .nav-link {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-left: 2.5rem;
+  color: var(--black);
+}
+
+.header .icon {
+  font-size: 2rem;
+  margin-left: auto;
+  display: none;
+}

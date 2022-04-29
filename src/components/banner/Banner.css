@@ -1,0 +1,22 @@
+.banner .slide {
+  height: 85vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.banner .slide-1 {
+  background: url(../../../public/images/slider-1.jpg) center no-repeat;
+}
+
+.banner .slide-2 {
+  background: url(../../../public/images/slider-2.jpg) center no-repeat;
+}
+
+.banner .slide-3 {
+  background: url(../../../public/images/slider-3.jpg) center no-repeat;
+}
+
+.banner .swiper-button-next:after,
+.swiper-button-prev:after {
+  color: white;
+}
