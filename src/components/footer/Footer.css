@@ -1,0 +1,64 @@
+.footer {
+  background: url(../../../public/images/footer.jpg) center no-repeat;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+  gap: 3rem;
+}
+
+.footer .box .address {
+  margin: 1rem 0;
+}
+
+.footer .box .address .info {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer .box .icons {
+  margin: 3rem 0;
+}
+
+.footer .box .icons .icon {
+  font-size: 2rem;
+  margin-right: 1.5rem;
+}
+
+.footer .box .icons .icon:hover {
+  color: var(--green);
+  cursor: pointer;
+}
+
+.footer .box .icon {
+  color: var(--white);
+}
+
+.footer .box p {
+  font-size: 1.7rem;
+  color: var(--white);
+  margin: 1.5rem 0;
+}
+
+.footer .box .link {
+  cursor: pointer;
+}
+
+.footer .box .link:hover {
+  color: var(--green);
+}
+
+.footer .box .link:hover .icon {
+  color: var(--green);
+  margin-left: 1.5rem;
+}
+
+.footer .box .link .icon {
+  margin-left: 0.5rem;
+  transition: all 0.3s linear;
+}
+
+.footer .box h3 {
+  font-size: 2rem;
+  color: var(--white);
+}
