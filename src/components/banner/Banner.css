@@ -2,6 +2,8 @@
   height: 85vh;
   width: 100%;
   object-fit: cover;
+  display: flex;
+  align-items: center;
 }
 
 .banner .slide-1 {
@@ -16,7 +18,32 @@
   background: url(../../../public/images/slider-3.jpg) center no-repeat;
 }
 
-.banner .swiper-button-next:after,
+.banner .swiper-button-next:after {
+  margin-right: 3rem;
+}
+
+.banner .swiper-button-prev:after {
+  margin-left: 3rem;
+}
+
+.banner .swiper-button-next::after,
 .swiper-button-prev:after {
   color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  background: var(--green);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.banner .swiper-button-next:hover::after {
+  background: var(--orange);
+}
+
+.banner .swiper-button-prev:hover::after {
+  background: var(--orange);
+}
+
+.banner .slide-3 .content {
+  margin-left: 50%;
 }

@@ -22,7 +22,15 @@ const Banner = () => {
       >
         <SwiperSlide className="slide slide-1"></SwiperSlide>
         <SwiperSlide className="slide slide-2"></SwiperSlide>
-        <SwiperSlide className="slide slide-3"></SwiperSlide>
+        <SwiperSlide className="slide slide-3">
+          <div className="content">
+            <img src="images/slider-icon.png" alt="" />
+            <p>100% healthy & affordable</p>
+            <h1>organic</h1>
+            <h1>vegetables</h1>
+            <p>small changes big differemce</p>
+          </div>
+        </SwiperSlide>
       </Swiper>
     </div>
   );
