@@ -71,6 +71,16 @@
   margin: 1rem 0;
 }
 
+.banner .slide-2 .btn {
+  background: var(--white);
+  color: var(--black);
+}
+
+.banner .slide-2 .btn:hover {
+  background: var(--red);
+  color: var(--white);
+}
+
 .banner .slide-1 .btn {
   background: var(--orange-light);
 }

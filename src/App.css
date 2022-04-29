@@ -5,6 +5,10 @@
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   background: white;
   z-index: 1000;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .app .pages > *:not(.home) {
@@ -37,7 +41,7 @@
 
   .app .header .nav {
     position: absolute;
-    top: 11%;
+    top: 99%;
     left: 0;
     right: 0;
     background: var(--white);

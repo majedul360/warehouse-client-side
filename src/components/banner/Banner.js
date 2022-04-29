@@ -36,7 +36,7 @@ const Banner = () => {
             <p style={{ fontSize: "3.5rem" }}>groca</p>
             <h1>vegetable 100% </h1>
             <h1>organic</h1>
-            <p style={{ fontSize: "3rem" }}>save upto 30% off</p>
+            <p style={{ fontSize: "3rem" }}>save upto 50% off</p>
             <Btn className="btn">shop now</Btn>
           </div>
         </SwiperSlide>
