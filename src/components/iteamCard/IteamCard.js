@@ -1,8 +1,10 @@
 import React from "react";
 import "./IteamCard.css";
-import Btn from "../btn/Btn";
+import { useNavigate } from "react-router-dom";
 const Iteamcard = ({ iteam }) => {
-  const { img, name, price, quantity, supplierName, desc } = iteam;
+  const { _id, img, name, price, quantity, supplierName, desc } = iteam;
+  const navigate = useNavigate();
+
   return (
     <div className="iteam-card">
       <img src={img} alt="" />
@@ -11,7 +13,9 @@ const Iteamcard = ({ iteam }) => {
       <h5>available: {quantity}</h5>
       <h6>supplier: {supplierName}</h6>
       <p className="desc">{desc.slice(0, 200)}</p>
-      <Btn>update</Btn>
+      <button className="btn" onClick={() => navigate(`/${_id}`)}>
+        update
+      </button>
     </div>
   );
 };

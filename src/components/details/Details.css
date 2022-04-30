@@ -1,0 +1,56 @@
+.details {
+  max-width: 100rem;
+  margin: 0 auto;
+}
+.details .box-container .box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3rem;
+}
+
+.details .box-container .box img {
+  flex: 1;
+  width: 50%;
+}
+
+.details .box-container .box .content {
+  flex: 1;
+}
+
+.details .box-container .box .content h3 {
+  font-size: 2.5rem;
+}
+.details .box-container .box .content h4 {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+}
+.details .box-container .box .content h5 {
+  font-size: 1.7rem;
+  margin: 0.5rem 0;
+}
+
+.details .box-container .box .content h6 {
+  font-size: 1.5rem;
+}
+
+.details .box-container p {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.details .btn-container {
+  text-align: center;
+}
+
+.details form {
+  margin-top: 3rem;
+}
+
+.details form .input {
+  width: 100%;
+  border: 0.1rem solid black;
+  padding: 1.2rem 1.4rem;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 1rem;
+}
