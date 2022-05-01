@@ -12,7 +12,7 @@ const Additeams = () => {
     const desc = e.target.desc.value;
     const iteam = { name, price, quantity, supplierName, img, desc };
     axios
-      .post("http://localhost:5000/addIteam", iteam)
+      .post("https://grocary.herokuapp.com/addIteam", iteam)
       .then((data) => {
         e.target.reset();
         alert("iteam added successful");

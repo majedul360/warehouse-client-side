@@ -6,7 +6,7 @@ const Manageiteams = () => {
   const [iteams, setIteams] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:5000/iteams")
+      .get("https://grocary.herokuapp.com/iteams")
       .then((deta) => setIteams(deta.data))
       .catch((error) => console.log(error));
   }, []);

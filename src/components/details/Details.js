@@ -12,7 +12,7 @@ const Details = () => {
     parseInt(quantity) - parseInt(delivar) + parseInt(number);
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/${id}`)
+      .get(`https://grocary.herokuapp.com/${id}`)
       .then((d) => {
         setIteam(d.data);
       })
@@ -27,7 +27,7 @@ const Details = () => {
       quantity: newQuantity,
     };
     axios
-      .put(`http://localhost:5000/update/${_id}`, iteamObj)
+      .put(`https://grocary.herokuapp.com/update/${_id}`, iteamObj)
       .then((data) => {})
       .catch((error) => console.log(error));
   };
@@ -39,7 +39,7 @@ const Details = () => {
     const newQuantity = parseInt(quantity) + parseInt(number);
     const iteamObj = { quantity: newQuantity };
     axios
-      .put(`http://localhost:5000/update/${_id}`, iteamObj)
+      .put(`https://grocary.herokuapp.com/update/${_id}`, iteamObj)
       .then((data) => e.target.reset())
       .catch((error) => console.log(error));
   };
