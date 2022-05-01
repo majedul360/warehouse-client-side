@@ -1,9 +1,21 @@
+import axios from "axios";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const Manageiteam = ({ iteam }) => {
+const Manageiteam = ({ iteam, deletedIteam }) => {
   const { _id, img, name, price, quantity, supplierName, desc } = iteam;
   const navigate = useNavigate();
+
+  const deleteBtn = (id) => {
+    const permission = window.confirm("Are You Sure?");
+    if (permission) {
+      deletedIteam(id);
+      axios
+        .delete(`http://localhost:5000/iteam/${id}`)
+        .then((data) => console.log(data))
+        .catch((e) => console.log(e));
+    }
+  };
   return (
     <div className="iteam-card">
       <img src={img} alt="" />
@@ -16,6 +28,7 @@ const Manageiteam = ({ iteam }) => {
         add
       </button>
       <button
+        onClick={() => deleteBtn(_id)}
         className="btn"
         style={{ marginLeft: "4rem", background: "#e71603" }}
       >

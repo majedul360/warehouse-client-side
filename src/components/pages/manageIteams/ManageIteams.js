@@ -10,10 +10,18 @@ const Manageiteams = () => {
       .then((deta) => setIteams(deta.data))
       .catch((error) => console.log(error));
   }, []);
+  const deletedIteam = (id) => {
+    const reaminingIteams = iteams.filter((iteam) => iteam._id !== id);
+    setIteams(reaminingIteams);
+  };
   return (
     <div className="iteams">
       {iteams.map((iteam) => (
-        <Manageiteam key={iteam._id} iteam={iteam} />
+        <Manageiteam
+          key={iteam._id}
+          iteam={iteam}
+          deletedIteam={deletedIteam}
+        />
       ))}
     </div>
   );

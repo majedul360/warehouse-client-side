@@ -13,7 +13,10 @@ const Additeams = () => {
     const iteam = { name, price, quantity, supplierName, img, desc };
     axios
       .post("http://localhost:5000/addIteam", iteam)
-      .then((data) => console.log(data))
+      .then((data) => {
+        e.target.reset();
+        alert("iteam added successful");
+      })
       .catch((e) => console.log(e));
   };
   return (
