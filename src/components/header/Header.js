@@ -21,7 +21,7 @@ const Header = () => {
         </Link>
         <Link
           className="nav-link"
-          to="/add-iteams"
+          to="/addIteams"
           onClick={() => setMenuIsOpen(false)}
         >
           Add Iteams

@@ -25,7 +25,9 @@
 
 p,
 .btn,
-span {
+span,
+input,
+textarea {
   font-family: "Roboto", sans-serif;
 }
 

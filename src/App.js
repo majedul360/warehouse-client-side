@@ -5,6 +5,7 @@ import { Route } from "react-router-dom";
 import Home from "./components/pages/home/Home";
 import ManageIteams from "./components/pages/manageIteams/ManageIteams";
 import Details from "./components/details/Details";
+import AddIteams from "./components/pages/addIteams/AddIteams";
 function App() {
   return (
     <div className="app">
@@ -14,6 +15,11 @@ function App() {
           <Route path="/" element={<Home />} className="home" />
           <Route path="/manage-iteams" element={<ManageIteams />} />
           <Route path="/:id" element={<Details />} />
+          <Route
+            path="/addIteams"
+            element={<AddIteams />}
+            className="add-iteams"
+          />
         </Routes>
       </div>
     </div>

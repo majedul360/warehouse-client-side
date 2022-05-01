@@ -1,0 +1,32 @@
+.add-iteams {
+  background: var(--green);
+  min-height: 89vh;
+}
+
+.add-iteams form {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+  padding-top: 5rem;
+}
+
+.add-iteams form input,
+textarea {
+  width: 100%;
+  padding: 1.2rem 1.4rem;
+  margin: 1rem 0;
+  text-transform: none;
+  font-size: 1.7rem;
+  border: 0.2rem solid var(--red);
+}
+
+.add-iteams form .btn {
+  border-color: var(--orange);
+  background: var(--orange);
+  text-transform: capitalize;
+}
+
+.add-iteams form textarea {
+  height: 15rem;
+  resize: none;
+}
