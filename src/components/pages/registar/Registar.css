@@ -1,0 +1,37 @@
+.authentication .form-container {
+  max-width: 50rem;
+  margin: 0 auto;
+  background: var(--green);
+  padding: 2rem;
+}
+
+.authentication .form-container .auth-title,
+.auth-option {
+  text-align: center;
+}
+
+.authentication .form-container .auth-title {
+  font-size: 2.5rem;
+}
+
+.authentication .form-container .auth-option {
+  font-size: 1.5rem;
+}
+
+.authentication .form-container form input {
+  width: 100%;
+  font-size: 1.7rem;
+  padding: 1.2rem 1.4rem;
+  margin: 1rem 0;
+  border: 0.1rem solid var(--black);
+  text-transform: none;
+}
+
+.authentication .form-container form .auth-btn {
+  background: var(--orange);
+  color: var(--white);
+  font-size: 1.7rem;
+  border-color: var(--orange);
+  text-transform: capitalize;
+  cursor: pointer;
+}

@@ -1,0 +1,43 @@
+.social-login .social-login-btn {
+  max-width: 40rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.1rem solid var(--black);
+  padding: 1rem 0;
+  border-radius: 5rem;
+  cursor: pointer;
+}
+
+.social-login img {
+  width: 3rem;
+  margin-right: 1.5rem;
+}
+
+.social-login span {
+  font-size: 1.7rem;
+}
+
+.social-login p {
+  position: relative;
+  max-width: 40rem;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.social-login p::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 0.1rem;
+  background: var(--black);
+  z-index: -1;
+}
+
+.social-login p span {
+  background: var(--white);
+  padding: 0 2rem;
+}

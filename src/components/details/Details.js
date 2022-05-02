@@ -22,7 +22,12 @@ const Details = () => {
   const delivarQuantity = () => {
     const quan = delivar + 1;
     setDelivar(quan);
-    const newQuantity = parseInt(quantity) - quan;
+    let newQuantity;
+    if (parseInt(quantity) > 0) {
+      newQuantity = parseInt(quantity) - parseInt(quan);
+    } else {
+      return;
+    }
     const iteamObj = {
       quantity: newQuantity,
     };
@@ -37,9 +42,9 @@ const Details = () => {
     const number = e.target.number.value;
     setNumber(number);
     const newQuantity = parseInt(quantity) + parseInt(number);
-    const iteamObj = { quantity: newQuantity };
+    const newIteam = { quantity: newQuantity };
     axios
-      .put(`https://grocary.herokuapp.com/update/${_id}`, iteamObj)
+      .put(`https://grocary.herokuapp.com/update/${_id}`, newIteam)
       .then((data) => e.target.reset())
       .catch((error) => console.log(error));
   };
@@ -51,7 +56,14 @@ const Details = () => {
           <div className="content">
             <h3>{name}</h3>
             <h4>{price}</h4>
-            <h5>available: {isNaN(finalQuantity) ? "" : finalQuantity}</h5>
+            <h5>
+              available:{" "}
+              {isNaN(finalQuantity)
+                ? ""
+                : finalQuantity > 0
+                ? finalQuantity
+                : 0}
+            </h5>
             <h6>supplier: {supplierName}</h6>
           </div>
         </div>
