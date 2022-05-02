@@ -8,8 +8,11 @@ const Details = () => {
   const [delivar, setDelivar] = useState(0);
   const [number, setNumber] = useState(0);
   const { _id, name, img, price, supplierName, desc, quantity } = iteam;
-  const finalQuantity =
-    parseInt(quantity) - parseInt(delivar) + parseInt(number);
+  let finalQuantity = parseInt(quantity) + parseInt(number);
+  if (quantity > 0) {
+    finalQuantity = finalQuantity - parseInt(delivar);
+  }
+
   useEffect(() => {
     axios
       .get(`https://grocary.herokuapp.com/${id}`)
@@ -48,6 +51,7 @@ const Details = () => {
       .then((data) => e.target.reset())
       .catch((error) => console.log(error));
   };
+
   return (
     <div className="details">
       <div className="box-container">
@@ -56,14 +60,7 @@ const Details = () => {
           <div className="content">
             <h3>{name}</h3>
             <h4>{price}</h4>
-            <h5>
-              available:{" "}
-              {isNaN(finalQuantity)
-                ? ""
-                : finalQuantity > 0
-                ? finalQuantity
-                : 0}
-            </h5>
+            <h5>available: {isNaN(finalQuantity) ? "" : finalQuantity}</h5>
             <h6>supplier: {supplierName}</h6>
           </div>
         </div>
