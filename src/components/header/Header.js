@@ -3,8 +3,13 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../firebase/Firebase.int";
+import { signOut } from "firebase/auth";
 const Header = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const [user, loading, error] = useAuthState(auth);
+  console.log(user);
   return (
     <div className="header">
       <img src="images/logo.png" alt="" />
@@ -40,13 +45,23 @@ const Header = () => {
         >
           Registar
         </Link>
-        <Link
-          className="nav-link"
-          to="/login"
-          onClick={() => setMenuIsOpen(false)}
-        >
-          Login
-        </Link>
+        {user ? (
+          <span
+            onClick={() => signOut(auth)}
+            style={{ cursor: "pointer" }}
+            className="nav-link"
+          >
+            log out
+          </span>
+        ) : (
+          <Link
+            className="nav-link"
+            to="/login"
+            onClick={() => setMenuIsOpen(false)}
+          >
+            Login
+          </Link>
+        )}
       </nav>
       <FontAwesomeIcon
         onClick={() => setMenuIsOpen(!menuIsOpen)}
