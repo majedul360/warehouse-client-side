@@ -9,7 +9,6 @@ import { signOut } from "firebase/auth";
 const Header = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [user, loading, error] = useAuthState(auth);
-  console.log(user);
   return (
     <div className="header">
       <img src="images/logo.png" alt="" />

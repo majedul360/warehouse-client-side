@@ -5,8 +5,7 @@
   padding: 2rem;
 }
 
-.authentication .form-container .auth-title,
-.auth-option {
+.authentication .form-container .auth-title {
   text-align: center;
 }
 
