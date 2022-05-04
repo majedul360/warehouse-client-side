@@ -26,16 +26,26 @@ const Additeams = () => {
   return (
     <div className="add-iteams">
       <form onSubmit={addIteamHandler} action="">
-        <input type="text" placeholder="enter name" name="name" />
-        <input type="number" placeholder="enter price" name="price" />
-        <input type="number" placeholder="enter quantity" name="quantity" />
+        <input type="text" placeholder="enter name" name="name" required />
+        <input type="number" placeholder="enter price" name="price" required />
+        <input
+          type="number"
+          placeholder="enter quantity"
+          name="quantity"
+          required
+        />
         <input
           type="text"
           placeholder="enter supplier name"
           name="supplierName"
+          required
         />
-        <input type="text" placeholder="enter image url" name="img" />
-        <textarea name="desc" placeholder="enter description"></textarea>
+        <input type="text" placeholder="enter image url" name="img" required />
+        <textarea
+          name="desc"
+          placeholder="enter description"
+          required
+        ></textarea>
         <input className="btn" type="submit" value="add iteam" />
       </form>
     </div>

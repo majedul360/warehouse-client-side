@@ -13,7 +13,7 @@ const Iteamcard = ({ iteam }) => {
       <h5>available: {quantity}</h5>
       <h6>supplier: {supplierName}</h6>
       <p className="desc">{desc.slice(0, 200)}</p>
-      <button className="btn" onClick={() => navigate(`/${_id}`)}>
+      <button className="btn" onClick={() => navigate(`/details/${_id}`)}>
         update
       </button>
     </div>

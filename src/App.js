@@ -10,6 +10,7 @@ import MyIteams from "./components/pages/myIteams/MyIteams";
 import Registar from "./components/pages/registar/Registar";
 import Login from "./components/pages/login/Login";
 import Requireauth from "./components/requireAuth/RequireAuth";
+import Notfound from "./components/notFound/NotFound";
 function App() {
   return (
     <div className="app">
@@ -25,7 +26,7 @@ function App() {
               </Requireauth>
             }
           />
-          <Route path="/:id" element={<Details />} />
+          <Route path="details/:id" element={<Details />} />
           <Route
             path="/addIteams"
             element={
@@ -45,6 +46,7 @@ function App() {
           />
           <Route path="/registar" element={<Registar />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/*" element={<Notfound />} />
         </Routes>
       </div>
     </div>
