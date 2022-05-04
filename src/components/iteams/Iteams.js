@@ -8,7 +8,9 @@ const Iteams = () => {
   useEffect(() => {
     axios
       .get("https://grocary.herokuapp.com/iteams")
-      .then((deta) => setIteams(deta.data))
+      .then((deta) => {
+        setIteams(deta.data);
+      })
       .catch((error) => console.log(error));
   }, []);
 
