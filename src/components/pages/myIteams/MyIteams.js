@@ -9,10 +9,10 @@ const Myiteams = () => {
   const [iteams, setIteams] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/userIteams/${user.email}`)
+      .get(`https://grocary.herokuapp.com/userIteams/${user.email}`)
       .then((d) => setIteams(d?.data))
       .catch((e) => console.log(e));
-  }, [user.email]);
+  }, []);
   console.log(iteams);
   return (
     <div className="iteams">
