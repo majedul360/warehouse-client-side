@@ -9,6 +9,7 @@ import AddIteams from "./components/pages/addIteams/AddIteams";
 import MyIteams from "./components/pages/myIteams/MyIteams";
 import Registar from "./components/pages/registar/Registar";
 import Login from "./components/pages/login/Login";
+import Requireauth from "./components/requireAuth/RequireAuth";
 function App() {
   return (
     <div className="app">
@@ -16,14 +17,32 @@ function App() {
       <div className="pages">
         <Routes>
           <Route path="/" element={<Home />} className="home" />
-          <Route path="/manage-iteams" element={<ManageIteams />} />
+          <Route
+            path="/manage-iteams"
+            element={
+              <Requireauth>
+                <ManageIteams />
+              </Requireauth>
+            }
+          />
           <Route path="/:id" element={<Details />} />
           <Route
             path="/addIteams"
-            element={<AddIteams />}
+            element={
+              <Requireauth>
+                <AddIteams />
+              </Requireauth>
+            }
             className="add-iteams"
           />
-          <Route path="/my-iteams" element={<MyIteams />} />
+          <Route
+            path="/my-iteams"
+            element={
+              <Requireauth>
+                <MyIteams />
+              </Requireauth>
+            }
+          />
           <Route path="/registar" element={<Registar />} />
           <Route path="/login" element={<Login />} />
         </Routes>

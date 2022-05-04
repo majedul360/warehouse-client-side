@@ -1,10 +1,9 @@
-import { async } from "@firebase/util";
 import React from "react";
 import {
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase/Firebase.int";
 import Sociallogin from "../../socialLogin/SocialLogin";
 import "./Login.css";
@@ -13,6 +12,13 @@ const Login = () => {
     useSignInWithEmailAndPassword(auth);
   const [sendPasswordResetEmail, sending, PasswordReseterror] =
     useSendPasswordResetEmail(auth);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
+  if (user) {
+    navigate(from, { replace: true });
+  }
   const userSignIn = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;

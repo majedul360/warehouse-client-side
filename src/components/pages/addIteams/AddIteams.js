@@ -1,7 +1,10 @@
 import axios from "axios";
 import React from "react";
 import "./AddIteams.css";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase/Firebase.int";
 const Additeams = () => {
+  const [user] = useAuthState(auth);
   const addIteamHandler = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
@@ -10,7 +13,8 @@ const Additeams = () => {
     const supplierName = e.target.supplierName.value;
     const img = e.target.img.value;
     const desc = e.target.desc.value;
-    const iteam = { name, price, quantity, supplierName, img, desc };
+    const email = user.email;
+    const iteam = { name, price, quantity, supplierName, img, desc, email };
     axios
       .post("https://grocary.herokuapp.com/addIteam", iteam)
       .then((data) => {
