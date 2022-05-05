@@ -1,9 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./Details.css";
 const Details = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [iteam, setIteam] = useState({});
   const [delivar, setDelivar] = useState(0);
   const [number, setNumber] = useState(0);
@@ -83,6 +84,11 @@ const Details = () => {
           <input className="btn" type="submit" value="add quantity" />
         </div>
       </form>
+      <div style={{ textAlign: "center", marginTop: "2rem" }}>
+        <button className="btn" onClick={() => navigate("/manage-iteams")}>
+          manage iteams
+        </button>
+      </div>
     </div>
   );
 };
