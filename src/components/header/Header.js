@@ -37,6 +37,14 @@ const Header = () => {
         >
           My Iteams
         </Link>
+
+        <Link
+          className="nav-link"
+          to="/blogs"
+          onClick={() => setMenuIsOpen(false)}
+        >
+          blogs
+        </Link>
         <Link
           className="nav-link"
           to="/registar"

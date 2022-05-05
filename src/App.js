@@ -11,6 +11,7 @@ import Registar from "./components/pages/registar/Registar";
 import Login from "./components/pages/login/Login";
 import Requireauth from "./components/requireAuth/RequireAuth";
 import Notfound from "./components/notFound/NotFound";
+import Blogs from "./components/pages/blogs/Blogs";
 function App() {
   return (
     <div className="app">
@@ -44,6 +45,7 @@ function App() {
               </Requireauth>
             }
           />
+          <Route path="/blogs" element={<Blogs />} />
           <Route path="/registar" element={<Registar />} />
           <Route path="/login" element={<Login />} />
           <Route path="/*" element={<Notfound />} />
