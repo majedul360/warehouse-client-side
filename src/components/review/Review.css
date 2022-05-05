@@ -1,8 +1,8 @@
 .review {
   background: url(../../../public/images/review-bg.jpg) center;
   background-size: cover;
-  margin: 5rem 0;
   padding: 4rem 0;
+  margin-bottom: 5rem;
 }
 
 .review .slider .slide {
@@ -19,7 +19,6 @@
   align-items: center;
   justify-content: center;
   gap: 3rem;
-  margin-bottom: 3rem;
 }
 
 .review .slider .slide .client img {
