@@ -16,27 +16,33 @@ const Header = () => {
         <Link className="nav-link" to="/" onClick={() => setMenuIsOpen(false)}>
           Home
         </Link>
-        <Link
-          className="nav-link"
-          to="/manage-iteams"
-          onClick={() => setMenuIsOpen(false)}
-        >
-          Manage Iteams
-        </Link>
-        <Link
-          className="nav-link"
-          to="/addIteams"
-          onClick={() => setMenuIsOpen(false)}
-        >
-          Add Iteams
-        </Link>
-        <Link
-          className="nav-link"
-          to="/my-iteams"
-          onClick={() => setMenuIsOpen(false)}
-        >
-          My Iteams
-        </Link>
+        {user && (
+          <Link
+            className="nav-link"
+            to="/manage-iteams"
+            onClick={() => setMenuIsOpen(false)}
+          >
+            Manage Iteams
+          </Link>
+        )}
+        {user && (
+          <Link
+            className="nav-link"
+            to="/addIteams"
+            onClick={() => setMenuIsOpen(false)}
+          >
+            Add Iteams
+          </Link>
+        )}
+        {user && (
+          <Link
+            className="nav-link"
+            to="/my-iteams"
+            onClick={() => setMenuIsOpen(false)}
+          >
+            My Iteams
+          </Link>
+        )}
 
         <Link
           className="nav-link"

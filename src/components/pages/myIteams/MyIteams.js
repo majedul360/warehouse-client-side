@@ -19,13 +19,18 @@ const Myiteams = () => {
       .catch((e) => console.log(e));
   }, []);
 
+  const deleteIteam = (id) => {
+    const reaminingIteams = iteams.filter((iteam) => iteam._id !== id);
+    setIteams(reaminingIteams);
+  };
+
   if (loading) {
     return <Loading />;
   } else {
     return (
       <div className="iteams">
         {iteams.map((iteam) => (
-          <Myiteam key={iteam._id} iteam={iteam} />
+          <Myiteam key={iteam._id} iteam={iteam} deleteIteam={deleteIteam} />
         ))}
       </div>
     );

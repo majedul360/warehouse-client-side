@@ -1,7 +1,18 @@
+import axios from "axios";
 import React from "react";
 
-const Myiteam = ({ iteam }) => {
+const Myiteam = ({ iteam, deleteIteam }) => {
   const { _id, img, name, price, quantity, supplierName, desc } = iteam;
+  const deleteBtn = (id) => {
+    const permission = window.confirm("Are You Sure?");
+    if (permission) {
+      deleteIteam(id);
+      axios
+        .delete(`https://grocary.herokuapp.com/iteam/${id}`)
+        .then((data) => console.log(data))
+        .catch((e) => console.log(e));
+    }
+  };
   return (
     <div className="iteam-card">
       <img src={img} alt="" />
@@ -10,6 +21,10 @@ const Myiteam = ({ iteam }) => {
       <h5>available: {quantity}</h5>
       <h6>supplier: {supplierName}</h6>
       <p className="desc">{desc.slice(0, 200)}</p>
+      <button className="btn" onClick={() => deleteBtn(_id)}>
+        {" "}
+        delete
+      </button>
     </div>
   );
 };
