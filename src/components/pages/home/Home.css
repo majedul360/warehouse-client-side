@@ -1,4 +1,4 @@
-.home > *:not(.banner) {
+.home > *:not(.banner, .review) {
   padding: 5rem 9%;
 }
 
@@ -9,7 +9,7 @@
 
 /* media quearies */
 @media (max-width: 1024px) {
-  .home > *:not(.banner) {
+  .home > *:not(.banner, .review) {
     padding: 5rem 5%;
   }
 
@@ -20,7 +20,7 @@
 }
 
 @media (max-width: 800px) {
-  .home > *:not(.banner) {
+  .home > *:not(.banner, .review) {
     padding: 5rem 3rem;
   }
 
@@ -30,7 +30,7 @@
   }
 }
 @media (max-width: 450px) {
-  .home > *:not(.banner) {
+  .home > *:not(.banner, .review) {
     padding: 5rem 2rem;
   }
 

@@ -1,0 +1,81 @@
+.review {
+  background: url(../../../public/images/review-bg.jpg) center;
+  background-size: cover;
+  margin: 5rem 0;
+  padding: 4rem 0;
+}
+
+.review .slider .slide {
+  background: var(--white);
+  max-width: 80rem;
+  margin: 0 auto;
+  margin-top: 2rem;
+  border-radius: 1rem;
+  padding: 3rem;
+}
+
+.review .slider .slide .client {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.review .slider .slide .client img {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+}
+
+.review .slider .slide h3 {
+  font-size: 2rem;
+}
+
+.review .slider .slide p {
+  font-size: 1.7rem;
+  line-height: 3rem;
+  text-transform: none;
+}
+.review .swiper-button-next:after {
+  margin-right: 30rem;
+}
+
+.review .swiper-button-prev:after {
+  margin-left: 30rem;
+}
+
+.review .swiper-button-next::after,
+.swiper-button-prev:after {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  background: var(--green);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.review .swiper-button-next:hover::after {
+  background: var(--orange);
+}
+
+.review .swiper-button-prev:hover::after {
+  background: var(--orange);
+}
+
+/* media quearies */
+@media (max-width: 450px) {
+  .review .slider {
+    padding: 4rem 2rem;
+  }
+
+  .review .swiper-button-next:after {
+    margin-right: 5rem;
+    margin-bottom: 4rem;
+  }
+
+  .review .swiper-button-prev:after {
+    margin-left: 5rem;
+    margin-bottom: 4rem;
+  }
+}
