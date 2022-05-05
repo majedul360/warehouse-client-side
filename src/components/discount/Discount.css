@@ -20,3 +20,11 @@
   text-transform: none;
   margin: 1.5rem 0;
 }
+
+/* media quearies */
+@media (max-width: 450px) {
+  .discount .content {
+    max-width: 50rem;
+    margin-left: 2rem;
+  }
+}
