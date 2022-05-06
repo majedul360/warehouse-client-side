@@ -1,6 +1,25 @@
-# Getting Started with Create React App
+This is a grocary project which helps people to shop grocary products
+easily. [Groca](https://github.com/facebook/create-react-app).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features:
+
+- Fully Responsive
+- Clean and Simple design
+- Hand writing coding
+- User Friendly
+- Easy to Customize
+- Load Faster
+
+## Credits:
+
+- Html & css
+- React Js
+- Node Js
+- Express Js
+- MongoDB
+- Firebase
+- Heroku
+- Google Fonts
 
 ## Available Scripts
 

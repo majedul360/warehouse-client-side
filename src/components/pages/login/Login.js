@@ -1,5 +1,5 @@
 import axios from "axios";
-import React from "react";
+import React, { useState } from "react";
 import {
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
@@ -8,7 +8,11 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase/Firebase.int";
 import Sociallogin from "../../socialLogin/SocialLogin";
 import "./Login.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Login = () => {
+  const [userEmail, setUserEmail] = useState("");
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const [sendPasswordResetEmail, sending, PasswordReseterror] =
@@ -17,15 +21,12 @@ const Login = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
-  // if (user) {
-  //   navigate(from, { replace: true });
-  // }
   const userSignIn = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
     await signInWithEmailAndPassword(email, password);
-    await sendPasswordResetEmail(email);
+
     await axios
       .post("https://grocary.herokuapp.com/get-token", {
         email,
@@ -38,13 +39,25 @@ const Login = () => {
       .catch((e) => console.log(e));
     e.target.reset();
   };
+
+  const resetPassword = async () => {
+    await sendPasswordResetEmail(userEmail);
+    notify();
+  };
+
+  const notify = () => toast("Please check your email", { autoClose: 2000 });
   return (
     <div className="authentication">
       <Sociallogin />
       <div className="form-container">
         <h3 className="auth-title">login</h3>
         <form onSubmit={userSignIn} action="">
-          <input type="email" placeholder="enter your email" name="email" />
+          <input
+            type="email"
+            placeholder="enter your email"
+            name="email"
+            onChange={(e) => setUserEmail(e.target.value)}
+          />
           <input
             type="password"
             placeholder="enter your password"
@@ -58,17 +71,19 @@ const Login = () => {
         <p className="auth-option">
           new to groca? <Link to="/registar">create an account</Link>
         </p>
-        <p
+        <span
           style={{
             fontSize: "1.5rem",
             marginTop: ".5rem",
             textDecoration: "underline",
             cursor: "pointer",
           }}
+          onClick={resetPassword}
         >
           forgot password?
-        </p>
+        </span>
       </div>
+      <ToastContainer />
     </div>
   );
 };
