@@ -10,7 +10,7 @@ import Sociallogin from "../../socialLogin/SocialLogin";
 import "./Login.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import Loading from "../../loading/Loading";
 const Login = () => {
   const [userEmail, setUserEmail] = useState("");
   const [signInWithEmailAndPassword, user, loading, error] =
@@ -20,13 +20,15 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
+  if (loading) {
+    return <Loading />;
+  }
 
   const userSignIn = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
     await signInWithEmailAndPassword(email, password);
-
     await axios
       .post("https://grocary.herokuapp.com/get-token", {
         email,
@@ -46,6 +48,7 @@ const Login = () => {
   };
 
   const notify = () => toast("Please check your email", { autoClose: 2000 });
+
   return (
     <div className="authentication">
       <Sociallogin />

@@ -6,12 +6,17 @@ import {
 } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../firebase/Firebase.int";
+import Loading from "../../loading/Loading";
 import Sociallogin from "../../socialLogin/SocialLogin";
 import "./Registar.css";
 const Registar = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [updateProfile] = useUpdateProfile(auth);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   const createUser = async (e) => {
     e.preventDefault();

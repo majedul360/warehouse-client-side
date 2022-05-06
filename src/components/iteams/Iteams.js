@@ -4,17 +4,11 @@ import Iteamcard from "../iteamCard/IteamCard";
 import Sectiontitle from "../sectionTitle/SectionTitle";
 import "./Iteams.css";
 import { useNavigate } from "react-router-dom";
+import GetIteams from "../customHooks/CustomHooks";
 const Iteams = () => {
   const navigate = useNavigate();
-  const [iteams, setIteams] = useState([]);
-  useEffect(() => {
-    axios
-      .get("https://grocary.herokuapp.com/iteams")
-      .then((deta) => {
-        setIteams(deta.data);
-      })
-      .catch((error) => console.log(error));
-  }, []);
+
+  const { iteams } = GetIteams();
 
   return (
     <div>
