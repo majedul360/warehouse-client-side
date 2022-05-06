@@ -16,7 +16,7 @@ const Details = () => {
 
   useEffect(() => {
     axios
-      .get(`https://grocary.herokuapp.com/${id}`)
+      .get(`https://grocary.herokuapp.com/details/${id}`)
       .then((d) => {
         setIteam(d.data);
       })

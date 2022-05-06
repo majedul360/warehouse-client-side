@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import {
   useSendPasswordResetEmail,
@@ -16,15 +17,25 @@ const Login = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
-  if (user) {
-    navigate(from, { replace: true });
-  }
+  // if (user) {
+  //   navigate(from, { replace: true });
+  // }
   const userSignIn = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
     await signInWithEmailAndPassword(email, password);
     await sendPasswordResetEmail(email);
+    await axios
+      .post("https://grocary.herokuapp.com/get-token", {
+        email,
+      })
+      .then((res) => {
+        const token = res.data.accessToken;
+        localStorage.setItem("accessToken", token);
+        navigate(from, { replace: true });
+      })
+      .catch((e) => console.log(e));
     e.target.reset();
   };
   return (
