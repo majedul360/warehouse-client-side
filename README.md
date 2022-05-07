@@ -1,5 +1,5 @@
 This is a grocary project which helps people to shop grocary products
-easily. [Groca](https://github.com/facebook/create-react-app).
+easily. [Groca](https://groca-2cea6.web.app/manage-iteams).
 
 ## Features:
 
