@@ -3,8 +3,8 @@ easily. [Groca](https://groca-2cea6.web.app/manage-iteams).
 
 ## Features:
 
+- Beautifu Design
 - Fully Responsive
-- Clean and Simple design
 - Hand writing coding
 - User Friendly
 - Easy to Customize
