@@ -16,7 +16,7 @@ const Additeams = () => {
     const email = user.email;
     const iteam = { name, price, quantity, supplierName, img, desc, email };
     axios
-      .post("https://grocary.herokuapp.com/addIteam", iteam)
+      .post("https://warehouse-3snt.onrender.com/addIteam", iteam)
       .then((data) => {
         e.target.reset();
         alert("iteam added successful");

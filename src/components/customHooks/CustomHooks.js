@@ -6,7 +6,7 @@ const GetIteams = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     axios
-      .get("https://grocary.herokuapp.com/iteams")
+      .get("https://warehouse-3snt.onrender.com/iteams")
       .then((deta) => {
         setIteams(deta.data);
         setLoading(false);

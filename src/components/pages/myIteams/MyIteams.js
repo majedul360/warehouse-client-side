@@ -14,7 +14,7 @@ const Myiteams = () => {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get(`https://grocary.herokuapp.com/userIteams/${user.email}`, {
+      .get(`https://warehouse-3snt.onrender.com/userIteams/${user.email}`, {
         headers: {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },

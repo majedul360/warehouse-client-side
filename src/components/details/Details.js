@@ -16,7 +16,7 @@ const Details = () => {
 
   useEffect(() => {
     axios
-      .get(`https://grocary.herokuapp.com/details/${id}`)
+      .get(`https://warehouse-3snt.onrender.com/details/${id}`)
       .then((d) => {
         setIteam(d.data);
       })
@@ -36,7 +36,7 @@ const Details = () => {
       quantity: newQuantity,
     };
     axios
-      .put(`https://grocary.herokuapp.com/update/${_id}`, iteamObj)
+      .put(`https://warehouse-3snt.onrender.com/update/${_id}`, iteamObj)
       .then((data) => {})
       .catch((error) => console.log(error));
   };
@@ -48,7 +48,7 @@ const Details = () => {
     const newQuantity = parseInt(quantity) + parseInt(number);
     const newIteam = { quantity: newQuantity };
     axios
-      .put(`https://grocary.herokuapp.com/update/${_id}`, newIteam)
+      .put(`https://warehouse-3snt.onrender.com/update/${_id}`, newIteam)
       .then((data) => e.target.reset())
       .catch((error) => console.log(error));
   };

@@ -30,7 +30,7 @@ const Login = () => {
     const password = e.target.password.value;
     await signInWithEmailAndPassword(email, password);
     await axios
-      .post("https://grocary.herokuapp.com/get-token", {
+      .post("https://warehouse-3snt.onrender.com/get-token", {
         email,
       })
       .then((res) => {

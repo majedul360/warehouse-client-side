@@ -11,7 +11,7 @@ const Manageiteam = ({ iteam, deletedIteam }) => {
     if (permission) {
       deletedIteam(id);
       axios
-        .delete(`https://grocary.herokuapp.com/iteam/${id}`)
+        .delete(`https://warehouse-3snt.onrender.com/iteam/${id}`)
         .then((data) => console.log(data))
         .catch((e) => console.log(e));
     }
