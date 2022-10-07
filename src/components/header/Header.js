@@ -46,13 +46,6 @@ const Header = () => {
 
         <Link
           className="nav-link"
-          to="/blogs"
-          onClick={() => setMenuIsOpen(false)}
-        >
-          blogs
-        </Link>
-        <Link
-          className="nav-link"
           to="/registar"
           onClick={() => setMenuIsOpen(false)}
         >
@@ -64,7 +57,7 @@ const Header = () => {
             style={{ cursor: "pointer" }}
             className="nav-link"
           >
-            log out
+            Log Out
           </span>
         ) : (
           <Link
