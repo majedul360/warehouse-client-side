@@ -60,7 +60,7 @@ const Header = () => {
         </Link>
         {user ? (
           <span
-            onClick={() => signOut(auth)}
+            onClick={() => signOut(auth, setMenuIsOpen(false))}
             style={{ cursor: "pointer" }}
             className="nav-link"
           >
